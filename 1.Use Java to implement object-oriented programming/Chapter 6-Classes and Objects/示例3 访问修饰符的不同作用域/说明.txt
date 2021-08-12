@@ -1,0 +1,8 @@
+演示目的：
+验证不同访问修饰符（public、默认修饰符、protected、private）的不同作用域
+
+演示方法：
+结合代码创建不同包，将Student.java与TestStudent.java分别拷贝其中，并设置Student的age属性与study()方法为不同访问修饰符修饰，在TestStudent中进行测试，测试在同一个类、同一个包以及任何地方这几种不同作用域的效果
+
+演示说明：
+教师上课时可灵活调整代码
