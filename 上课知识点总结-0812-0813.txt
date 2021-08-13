@@ -1,0 +1,211 @@
+面向过程编程
+1、变量
+int i =1;
+float i = 1.0
+String s = "123"
+
+2、if
+int result = 60;
+if(result>=60){
+	System.out.println("ok")
+}else{
+	System.out.println("not ok")
+}
+
+诚实国
+谎话国
+岔路口
+
+问一句话去诚实国
+--->    --->
+if("诚实国"==1 && "谎话国"==1){
+	
+}else{
+	
+}
+
+if 多分类  A90-100 B80-90 C70-80 D60-70 E60
+
+3、for while do while break continue
+1+2+3.。。。10=？55
+int sum = 0;
+for(int i=1;i<=10;i++){
+	sum = sum +i;
+}
+System.out.print(sum);
+
+int i=1;
+int sum = 0;
+while(i<=10){
+	sum = sum +i;
+	i++;//i = i+1
+}
+System.out.print(sum);
+
+int i=1;
+int sum = 0;
+do{
+	sum = sum +i;
+	i++;//i = i+1
+}while(i<=10)
+System.out.print(sum);
+
+1+2+3.。。。10=？ 奇数  7=碰瓷的
+1+3+5+7+9 
+
+1+3+5 =???
+int i=1;
+int sum = 0;
+do{
+    if(i % 2 ==0){
+    	continue;
+    }
+    if(i==7){
+        break;
+    }
+	sum = sum +i;
+	i++;//i = i+1
+}while(i<=10)
+System.out.print(sum);
+
+
+
+4、array
+    int[] scores = {1,2,3,4,5};
+    for(int i : scores){
+        System.out.println(i);
+    }
+
+
+面向对象编程
+类 class     抽象出来的 属性-->变量 方法-->方法  （构造方法 只执行一次 天赋能力）
+对象 object   内存开销  开始new 销毁null
+
+可选
+猫大叫一声，老鼠跑了，主人醒了。。
+
+
+
+抽象类abstract
+不能实例化
+abstract方法，不需要{},不需要实现内容。。
+子类继承抽象类，必须实现抽象方法
+
+社会阶层问题  
+很多人很累class 但很少钱 
+很多人不那么累abstract class  但很多钱。2/8
+
+接口 interface 
+
+继承 extend 代码复用 一代比一代强
+重写
+重载
+
+--------------------------------
+（封装、多态、访问修饰符、异常、抽象类、接口）、IO
+
+多态，同一个行为具有不同表现形式或形态的能力。。
+
+行为就是方法
+重写
+重载
+
+引用就是形态
+
+多态的优势
+继承
+重写
+重载
+引用
+
+类继承、抽象类、接口
+多继承？否
+
+爹（继承）一个但干爹/义父（接口）很多
+
+
+手机的发展历史
+1、Nokia
+2、Android    Apple
+用面向对象的的思想完成。。
+知识点
+类  继承  接口
+
+class Mobile{
+	public String name="手机";
+
+    //发短信
+	public void sendMes(){
+		System.out.println("发短信");
+	}
+	//打电话
+	public void call(){
+		System.out.println("打电话");
+	}
+}
+
+class Nokia extends Mobile{	
+}
+
+public interface Music {
+    //听音乐
+    void music();
+}
+
+public interface Move {
+    //看电影
+    void move();
+}
+
+class Android extends Mobile implements Music,Move{	
+}
+
+class Apple extends Mobile implements Music,Move{	
+}
+
+
+访问修饰符   所在类  同一个包  其他包内子类  其他包内非子类
+----------+------+--------+-----------+------------+
+public    + 可以  +	可以	  +	可以		  +可以         +
+----------+------+--------+-----------+------------+
+private   +	可以	 +	不可以 +	不可以	  +	不可以      +
+----------+------+--------+-----------+------------+
+protected +	可以  +   可以  +	可以		  +	不可以。     +
+----------+------+--------+-----------+------------+
+默认		  + 可以  + 可以   +不可以      +不可以        +
+----------+------+--------+-----------+------------+
+包的作用===部门
+
+
+（封装，、、异常、）、IO
+
+封装，属性访问修饰符是private，但是又要使用这个修饰符是private的属性。
+方法
+
+
+异常
+----捕获异常----
+try{
+	
+}catch(异常){
+	
+}finally{
+	
+}
+
+----抛出异常----
+throws声明抛出异常	，public static void divide() throws Exception{}
+{
+1、异常来源于Java自身，例如分母不能为0. 1/0
+2、异常来源于开发者自身，例如主动抛出系统异常throw new Exception()
+3、异常来源于开发者自身，例如主动抛出系统异常throw new 自定义异常(继承Exception)
+}
+
+IO
+
+Loop interface exception 
+
+set treeset comparable
+
+
+
