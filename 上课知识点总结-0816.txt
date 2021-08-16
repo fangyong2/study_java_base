@@ -1,0 +1,42 @@
+
++----------------------------------------+
++集合 collection  Map                        +
++list set Comparable  hashcode() equal() +
++----------------------------------------+
+数组
+数组的弊端？？不能扩展，静态的。
+
+集合就是数组的扩展，动态的。
+collection
+	List: 泛型 Iterator  curd（add set remove get）
+	Set: 无序去重复的 curd（add  remove ）
+
+	comparable
+	第一轮，美国 日本  1
+	第二轮，中国 美国 -1
+
+	第三轮，中国 美国 -1
+	第四轮，中国 日本 1
+
+
+	hashcode() equal()
+	hashcode（）对象在内存的地址信息
+	equal（） 比较的是两个对象的hashCode是否相等
+
+Map
+key value数据结构
+
+描述一下你的个人基本信息，姓名方勇，年龄40，性别男。
+
+List list = new ArrayList();
+list.add("方勇");
+list.add(40);
+list.add("男");
+
+["方勇",40,"男"]
+
+Map map = new HashMap();
+map.put("姓名","方勇");
+map.put("年龄",40);
+map.put("性别","男");
+{"姓名":"方勇","年龄":40,"性别":"男"}
