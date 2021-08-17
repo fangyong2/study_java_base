@@ -1,0 +1,122 @@
++----------------------------------------------------+
+| SQL : DDL DML DCL					   				|
++----------------------------------------------------+
+| JDBC : Connection Statement ResultSet		|
++----------------------------------------------------+
+
+a aid aname
+
+b bid bname aid
+
+aid bid aname bname 
+
+select a.aid,a.aname,b.bid,b.bname left join b on a.aid=b.aid
+
++----------------------------------------------------+
+| 远程MYSQL主机配置信息					   			|
++----------------------------------------------------+
+|主机名或IP地址 ｜121.37.170.216						|
++-------------+--------------------------------------+
+|端口 		  ｜3306									|
++-------------+--------------------------------------+
+|用户名 		  ｜root									|
++-------------+--------------------------------------+
+|密码 		  ｜fy123456								|
++-------------+--------------------------------------+
+
+DDL（data definition language）数据库定义语言：
+其实就是我们在创建表的时候用到的一些sql，比如说：CREATE、ALTER、DROP等。DDL主要是用在定义或改变表的结构，数据类型，表之间的链接和约束等初始化工作上
+
+CREATE TABLE 表名称
+(
+列名称1 数据类型,
+列名称2 数据类型,
+列名称3 数据类型,
+....
+)
+
+DROP TABLE 表名称
+
+
+use hsbc;
+drop table tbl_dvd_姓名;
+create table tbl_dvd_姓名
+(
+id int primary key auto_increment,
+name varchar(20),
+state int,
+date int,
+count int
+);
+
+
+DML（data manipulation language）数据操纵语言：
+就是我们最经常用到的 SELECT、UPDATE、INSERT、DELETE。 主要用来对数据库的数据进行一些操作。
+
+SELECT 列名称 FROM 表名称
+UPDATE 表名称 SET 列名称 = 新值 WHERE 列名称 = 某值
+INSERT INTO table_name (列1, 列2,...) VALUES (值1, 值2,....)
+DELETE FROM 表名称 WHERE 列名称 = 值
+
+添加
+use hsbc;
+INSERT INTO tbl_dvd_fy (name, state,date,count) VALUES ("方勇", 1,0,1);
+
+修改
+UPDATE tbl_dvd_fy SET count = 100 WHERE name = "方勇";
+
+删除
+DELETE FROM tbl_dvd_fy WHERE name = "Ivy";
+
+查询
+use hsbc;
+SELECT * FROM tbl_dvd_fy;
+
+分页
+SELECT * FROM tbl_dvd_fy limit 2;
+
+
+
+
+DCL（Data Control Language）数据库控制语言：
+是用来设置或更改数据库用户或角色权限的语句，包括（grant,deny,revoke等）语句。这个比较少用到。
+1.COMMIT - save work done 提交 
+2.SAVEPOINT - identify a point in a transaction to which you can later roll back 保存点 
+3.ROLLBACK - restore database to original since the last COMMIT   回滚 
+
+
+
+JDBC操作数据库的七个基本步骤
+1、使用反射方式加载驱动器
+Class.forName("com.mysql.cj.jdbc.Driver");
+
+2、创建连接数据库对象
+String url = "jdbc:mysql://localhost[127.0.0.1]:3306/表名?characterEncoding=utf-8"
+String userName = "用户名"；
+String passWord = "密码"；
+Connection conn = DriverManage.getConnection(url,userName,PassWord)；
+
+3、创建操作数据库对象
+Statement stat = conn.createStatement() || conn.prepareStatement();
+
+4、创建Sql语句
+String sql = "select * from 表名 where 【约束条件】";
+String sql = "insert into 表名 列名 = 值 where 【约束条件】";
+String sql = "delete from 表名 where 【约束条件】";
+String sql = "update 表名 set 列名 = 值 where 【约束条件】"
+
+5、执行Sql语句，并创建结果集
+
+ResultSet rs = stat.executeQuery() || stat.executeUpdate();
+
+6、操作结果集
+while(rs.next()){
+    rs.getString() || rs.getInt() || rs.getDouble() || rs.getFloat || rs.getDate()
+}
+
+7、释放资源
+//先创建的后释放
+if(rs != null) rs.close();          //释放结果集对象
+if(stat != null) stat.close();      //释放操作数据库对象
+if(conn != null) conn.close();      //释放连接数据库对象
+
