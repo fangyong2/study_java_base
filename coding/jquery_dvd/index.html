@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+	</head>
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+	<body>
+		<table id='t1'></table>
+		<input id="text" type="button" value="列表"/> 
+		    
+		<input id="text1" type="button" value="添加"/> 
+		
+		<input id="text3" name="name" type="text" value="" placeholder="请输入添加的名称"/> 
+
+		<input id="text4" name="email" type="text" value="" placeholder="请输入添加的email"/> 
+		
+		
+	</body>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		      $("#text").bind("click",function(){
+		          //alert("我的id为text，你点击时触发");
+				  $.ajax({
+					  url:"http://localhost:8080/demo/all",
+					  type:'get',
+					  data:'',
+					  dataType:'json',
+					  success:function (data) {
+						  console.log(data);
+						  
+						  var html="";
+						  for(var i=0;i<data.length;i++){
+								html+="<tr><td>"+data[i].id+"</td><td>"+data[i].name+"</td><td>"+data[i].email+"</td></tr>";				  
+						  }
+						  
+						  $('#t1').html(html);
+						  console.log(html);
+					  }
+				  });
+				  return false;
+		      });
+		      
+		      $("#text1").on("click",function(){
+		          //alert("hellworl");
+		          var name = $("#text3").val();
+		          var email = $("#text4").val();
+		          console.log(name);
+		          console.log(email);
+		          var form = 'name='+name+"&email="+email;
+				  $.ajax({
+					  url:"http://localhost:8080/demo/add",
+					  type:'get',
+					  data:form,
+					  success:function (data) {
+						  console.log(data);
+					  }
+				  });
+				  return false;		          
+		      });
+		      
+		      
+		});
+	</script>
+</html>

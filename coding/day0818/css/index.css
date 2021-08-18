@@ -1,0 +1,66 @@
+*{
+	font-size: 14px;
+	font-family: "microsoft yahei";
+	/* margin: 0px; */
+}
+h1{
+	font-size: 32px;
+	text-align: center;
+}
+div{
+	border: 1px solid #ff0000;
+}
+table{
+	width: 100%;
+	border-collapse:collapse;
+}
+
+table tr:first-child{
+	color:#f00;
+}
+table th{
+	border: 1px solid #000000;
+	text-align: center;
+	font-weight: bold;
+}
+
+table td{
+	border: 1px solid #000000;
+	text-align: center;
+}
+ul{
+	list-style: none;
+	margin: 0px auto;
+	padding:0px;
+	text-align: center;
+}
+button{
+	border: 1px solid #000000;
+	border-radius: 5%;
+	margin-bottom: 5px;
+}
+
+form{
+	margin: 10px auto;
+	text-align: center;
+}
+form label{
+	
+}
+
+form input{
+	border: 1px solid #000000;
+	border-radius: 5%;
+	width: 50%;
+	margin-top: 5px;
+}
+
+.col8{
+	float: right;
+	width: 66%;
+}
+
+.col4{
+	float: left;
+	width: 33%;
+}

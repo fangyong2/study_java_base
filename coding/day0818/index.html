@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>hello world....</title>
+		<style>@import url("css/index.css")</style>
+		<script src="js/index.js"></script>
+		<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	</head>
+	<body>
+		
+		<h1>欢 迎 使 用 迷 你 DVD 管 理 器</h1>
+		<!-- 
+		1. 新 增 DVD
+		2. 查 看 DVD
+		3. 删 除 DVD
+		4. 借 出 DVD
+		5. 归 还 DVD
+		6. 退 出DVD
+		 -->
+		 <div class="col4">
+			 <!-- 列表组件开始 -->
+			 <ul>
+			 	<li><button id="btn_add">1. 新 增 DVD</button></li>
+			 	<li><button>2. 查 看 DVD</button></li>
+			 	<li><button>3. 删 除 DVD</button></li>
+			 	<li><button>4. 借 出 DVD</button></li>
+			 	<li><button>5. 归 还 DVD</button></li>
+			 	<li><button>6. 退 出 DVD</button></li>
+			 </ul>
+			 <!-- 列表组件结束 -->
+			 
+			 <!-- 新增DVD
+			 请输入DVD名称：
+			  -->
+			 <form action="home.html" method="get">
+			 	<label>请输入DVD名称:</label>
+				<br/>
+			 	<input type="text" placeholder="请输入DVD名称"/>
+			 	<br/>
+			 	<input type="submit"/>
+			 </form> 
+
+		 </div>
+
+		<div class="col8">
+			 <!-- 表格组件开始 -->
+			 <table>
+				<tr>
+					<th>序号</th>
+					<th>状 态</th>
+					<th>名称</th>
+					<th>借出日期</th>
+					<th>借出次数</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>可借</td>
+					<td><<风声鹤唳>></td>
+					<td>0日</td>
+					<td>12次</td>
+				</tr>	
+				<tr>
+					<td>2</td>
+					<td>已借出</td>
+					<td><<罗马假日>></td>
+					<td>1日</td>
+					<td>15次</td>
+				</tr>	
+				<tr>
+					<td>3</td>
+					<td>可借</td>
+					<td><<浪漫满屋>></td>
+					<td>0日</td>
+					<td>30次</td>
+				</tr>								
+			 </table>
+			 <!-- 表格组件结束 -->
+		</div>
+
+
+	</body>
+	<script>
+	$(document).ready(function(){
+		/* alert("hello jquery"); */
+		$("#btn_add").on("click",function(){
+			  alert("hellworl");
+			  $.ajax({
+				  url:"http://www.baidu.com",
+				  type:'get',
+				  data:'',
+				  success:function (data) {
+					  console.log(data);
+				  }
+			  });
+			  return false;		          
+		  });
+	});
+	</script>
+</html>
